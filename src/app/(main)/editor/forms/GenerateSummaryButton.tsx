@@ -26,11 +26,6 @@ export default function GenerateSummaryButton({
   const [loading, setLoading] = useState(false);
 
   async function handleClick() {
-    if (!canUseAITools(subscriptionLevel)) {
-      premiumModal.setOpen(true);
-      return;
-    }
-
     try {
       setLoading(true);
       const aiResponse = await generateSummary(resumeData);
